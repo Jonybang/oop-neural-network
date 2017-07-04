@@ -47,4 +47,5 @@ class Network:
             print('>epoch=%d, lrate=%.3f, delta=%.3f' % (epoch, l_rate, sum_delta))
 
     def delta(self, sample):
-        return sigmoid_algorithm.sigmoid_(sample - self.layers[-1].neurons_results[0])
+        error = sample - self.layers[-1].neurons_results[0]
+        return sigmoid_algorithm.sigmoid_(error)
